@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>java</title>
+	<meta charset="UTF-8">
+	<script>
+        var vec=["luis","santiago","daniel","ana"];
+        console.log(vec);
+	</script>
+<link rel="stylesheet" type="text/css" href="otro.css">
+</head>
+<body background="fondo.jpg">
+<script>
+var ing=function()
+{
+var nom=document.getElementById("nom");
+n1=nom.value;
+vec.push(n1);
+}
+var si=function()
+{
+	var i=0;
+	var nom2=document.getElementById("nom2").value;
+	var ul=vec.length-1; 
+	while(i<vec.length)
+	{
+		if(nom2==vec[i])
+		{
+			var ult=vec[ul];
+			vec[ul]=vec[i];
+			vec[i]=ult;
+			vec.pop();
+			console.log(vec);
+			i=vec.length;
+			document.getElementById("re").value="Eliminado con éxito";
+			document.getElementById("nom2").value="";
+		}
+		else
+		{
+			i=i+1;
+			if (nom2!=vec[i])
+			{
+				document.getElementById("re").value=nom2+" no está en el vector";
+			}
+		}
+	}
+}	
+	</script>
+<div id="hola">
+<div id="pp1">
+	<form class="p1">
+		
+		<h1>Ingresar</h1>
+	    <label>Nombre a ingresar (ejemplo:Juan, Luis, Miguel):</label>
+		<br>
+		<input type="tex" id="nom" placeholder="Ingrese un nombre">
+		<br><br>
+		<input type="button" value="Ingresar" onclick="ing();"> 
+	</div>       	
+	</form>
+
+	<form class="p2">
+	<div id="pp2">
+		<h1>Eliminar</h1>
+		<label>Nombre a eliminar:</label>
+		<br>
+		<input type="text" id="nom2" placeholder="Ingrese un nombre">
+		<br><br>
+		<input type="button" value="Eliminar" onclick="si();">
+		<br><br>
+		<label>Respuesta:</label>
+		<br>
+		<input type="text" id="re" placeholder="Respuesta">
+	</div>
+	</form>
+</div>
+</body>
+</html>
